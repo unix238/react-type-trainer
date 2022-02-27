@@ -2,7 +2,15 @@
   margin: 0;
   padding: 0;
 }
-
+.App {
+  background: rgb(240, 240, 240);
+}
+.wrapper{
+  width: 80%;
+  margin: 0 auto;
+  background: rgb(255, 255, 255);
+  height: 100vh;
+}
 .error {
   color: red;
 }
@@ -14,6 +22,7 @@
 .success {
   color: green;
 }
+
 
 .main {
   height: 40vh;
@@ -85,4 +94,19 @@
 
 
 
+}
+
+.author{
+  margin-top: 80px;
+  text-align: left;
+  padding-bottom: 40px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  background: #000;
+  height: 10vh;
+  color: #fff;
 }

@@ -4,6 +4,8 @@
     background-color: #282c34;
     position: fixed;
     color: #fff;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav__name {

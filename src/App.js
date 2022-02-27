@@ -17,6 +17,7 @@ function App() {
   const [time, setTime] = useState(0);
   const [totalError, setTotalError] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [author, setAuthor] = useState("");
 
   const handlerPress = (e) => {
     const isRightKeyPressed = e.key === texts[currentIndex];
@@ -65,8 +66,15 @@ function App() {
   const updateText = async () => {
     try {
       BooksServices.getRandomText().then((data) => {
-        console.log(data.data.results[0].text);
-        setTexts(data.data.results[0].text);
+        let result = data.data.results[0];
+        setTexts(result.text);
+        setAuthor(
+          result.date.slice(0, 10) +
+            " " +
+            result.date.slice(result.date.length - 5) +
+            " " +
+            result.context
+        );
         setIsLoading(false);
       });
     } catch (error) {
@@ -168,59 +176,75 @@ function App() {
   return (
     <div className="App" tabIndex={-1} onKeyDown={handlerPress}>
       <Navbar></Navbar>
-      {!isLoading ? (
-        <div className="main">
-          <h2>{drawText()}</h2>
-        </div>
-      ) : (
-        <div className="main">
-          <div className="lds-dual-ring"></div>
-        </div>
-      )}
+      <div className="wrapper">
+        {!isLoading ? (
+          <div className="main">
+            <h2>{drawText()}</h2>
+          </div>
+        ) : (
+          <div className="main">
+            <div className="lds-dual-ring"></div>
+          </div>
+        )}
 
-      {!isGameActive && currentIndex > 1 ? (
-        <div className="result">
-          <Statistics
-            restart={restart}
-            time={time}
-            totalError={totalError}
-            texts={texts}
-            isGameActive={isGameActive}
-          />
-        </div>
-      ) : (
-        <></>
-      )}
-      <div className="bottom__section">
-        {/* how to play section */}
-        <div className="how-to-play">
-          <div className="how-to-play__items">
-          <h4>How to play</h4>
-            <div className="how-to-play__item">
-              
-              <p>
-                You can type the text in the text box and press enter to
-                continue.
-              </p>
+        {!isGameActive && currentIndex > 1 ? (
+          <div className="result">
+            <Statistics
+              restart={restart}
+              time={time}
+              totalError={totalError}
+              texts={texts}
+              isGameActive={isGameActive}
+            />
+          </div>
+        ) : (
+          <></>
+        )}
+        <div className="bottom__section">
+          <div className="how-to-play">
+            <div className="how-to-play__items">
+              <h4>How to play</h4>
+              <div className="how-to-play__item">
+                <p>
+                  You can click on text and start typing.
+                </p>
 
-              <p>
-                If you type the wrong letter, you will see the red text and the
-                text will be highlighted in red.
-              </p>
+                <p>
+                  If you type the wrong letter, you will see the red text and
+                  the text will be highlighted in red.
+                </p>
 
-              <p>
-                If you type the right letter, the text will be highlighted in
-                green.
-              </p>
+                <p>
+                  If you type the right letter, the text will be highlighted in
+                  green.
+                </p>
 
-              <p>
-                If you type the right letter and you are at the end of the text,
-                you will see the green text and the game will be finished.
-              </p>
+                <p>
+                  If you type the right letter and you are at the end of the
+                  text, you will see the green text and the game will be
+                  finished.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+        {/* Author */}
+        {!isLoading ? (
+            <div className="author">
+              <p>{author}</p>
+            </div>
+          ) : (
+            <></>
+          )}
+          
       </div>
+      <div className="footer">
+            <p>
+                <span>
+                  Type Trainer React js
+                </span>
+            </p>
+          </div>
     </div>
   );
 }
