@@ -1,0 +1,24 @@
+.stats {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.8em;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.stats__item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.stats__item-title {
+    font-weight: bold;
+}
+
+.stats__item-value {
+    font-weight: bold;
+    color: #00a65a;
+}
+
+

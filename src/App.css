@@ -1,48 +1,88 @@
-.App {
-  text-align: center;
-  height: 100vh;
-}
-
 *{
   margin: 0;
   padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.error {
+  color: red;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.future {
+  color: gray;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.success {
+  color: green;
+}
+
+.main {
+  height: 40vh;
+  width: 100%;
+  text-align: center;
   align-items: center;
+  padding-top: 100px;
+}
+
+.main h2 {
+  padding-top: 100px;
+}
+
+.result {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-top: 40px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #000;
+  border-color: #000 transparent #000 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 
-.error {
-  color: red;
+
+.how-to-play {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.how-to-play__items {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.how-to-play__item {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+
+
+
 }
