@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-type-trainer/static/css/main.1b62d0d4.css",
+    "main.js": "/react-type-trainer/static/js/main.38ccc4ea.js",
+    "index.html": "/react-type-trainer/index.html",
+    "main.1b62d0d4.css.map": "/react-type-trainer/static/css/main.1b62d0d4.css.map",
+    "main.38ccc4ea.js.map": "/react-type-trainer/static/js/main.38ccc4ea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1b62d0d4.css",
+    "static/js/main.38ccc4ea.js"
+  ]
+}
